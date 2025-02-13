@@ -1,76 +1,94 @@
-{% load static %}
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Блог</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" />
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+    />
+    <link rel="stylesheet" href="../static/css/blog.css" />
   </head>
   <body>
     <div class="main-container">
       <div class="container">
         <div class="header">
-          <a href="{% url 'index' %}">
+          <a href="./index.html">
             <div class="design-box-new"></div>
           </a>
           <div class="nav">
-            <a href="{% url 'catalog' %}" class="goods-services">Товары и услуги</a>
-            <a href="{% url 'index' %}" class="completed-projects">Реализованные проекты</a>
-            <a href="{% url 'blog' %}" class="blog-1">Блог</a>
-            <a href="{% url 'contact' %}" class="contacts">Контакты</a>
+            <a href="./catalog.html" class="goods-services">Товары и услуги</a>
+            <a href="./index.html" class="completed-projects"
+              >Реализованные проекты</a
+            >
+            <a href="./blog.html" class="blog-1">Блог</a>
+            <a href="./contacts.html" class="contacts">Контакты</a>
           </div>
+          <a href="./contacts.html">
           <button class="btns">
             <div class="btn">
               <span class="get-in-touch">Выйти на связь</span>
             </div>
           </button>
+          </a>
+
         </div>
         <div class="frame">
-          <a href="{% url 'index' %}" class="home">Главная</a>
-          <a href="{% url 'blog' %}" class="blog-link">/ Блог</a>
+          <a href="./index.html" class="home">Главная</a
+          ><a href="./blog.html" class="blog-link">/ Блог</a>
         </div>
         <div class="frame-2">
-          {% for blog in blogs_groups.first_group %}
-            <div class="item">
-              <h3>{{ blog.title }}</h3>
-              <p>{{ blog.content|truncatewords:20 }}</p>
-              <a href="{% url 'detail-blog' blog.id %}">Читать далее</a>
-            </div>
-          {% endfor %}
+          <div class="component">
+            <a href="./detail-blog.html">
+              <div class="item-default">
+                <h3>Реечный потолок</h3>
+              </div>
+            </a>
+          </div>
+
+            <a href="./detail-blog.html">
+          <div class="item">
+            <h3>Подвесный потолок</h3>
+          </div>
+          </a>
+            <a href="./detail-blog.html">
+          <div class="item-3">
+            <h3>Потолок Грильято</h3>
+          </div>
+          </a>
+            <a href="./detail-blog.html">
+          <div class="item-4">
+            <h3>Потолки Армстронг</h3>
+          </div>
+          </a>
         </div>
         <div class="frame-5">
-          {% for blog in blogs_groups.second_group %}
-            <div class="item">
-              <h3>{{ blog.title }}</h3>
-              <p>{{ blog.content|truncatewords:20 }}</p>
-              <a href="{% url 'detail-blog' blog.id %}">Читать далее</a>
+          <div class="component-6">
+            <div class="item-default-7">
+              <h3>Подвесный потолок</h3>
             </div>
-          {% endfor %}
-        </div>
-        <div class="pagination">
-          <span class="step-links">
-            {% if page_obj.has_previous %}
-              <a href="?page=1">« первая</a>
-              <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
-            {% endif %}
-
-            <span class="current">
-              Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-            </span>
-
-            {% if page_obj.has_next %}
-              <a href="?page={{ page_obj.next_page_number }}">следующая</a>
-              <a href="?page={{ page_obj.paginator.num_pages }}">последняя »</a>
-            {% endif %}
-          </span>
+          </div>
+          <div class="item-8">
+            <h3>Подвесный потолок</h3>
+          </div>
+          <div class="item-9">
+            <h3>Подвесный потолок</h3>
+          </div>
+          <div class="item-a">
+            <h3>Подвесный потолок</h3>
+          </div>
         </div>
         <div class="frame-b">
           <span class="our-videos-on-youtube">Наши видео на Youtube</span>
           <div class="youtube">
-            <!-- Add dynamic YouTube video links here if needed -->
+            <div class="noor"><div class="image"></div></div>
+            <div class="noor-c"><div class="image-d"></div></div>
+            <div class="noor-e"><div class="image-f"></div></div>
           </div>
         </div>
       </div>
@@ -82,28 +100,35 @@
             <div class="group">
               <div class="flex-row-ae">
                 <div class="frame-12">
-                  <a href="{% url 'catalog' %}" class="products-and-services">Товары и услуги</a>
+                  <a href="./catalog.html" class="products-and-services"
+                    >Товары и услуги</a
+                  >
                   <div class="group-13">
-                    <span class="span-lighting">светильники</span>
-                    <span class="span-tiles">плиты</span>
-                    <span class="span-repair">ремонт</span>
-                    <span class="span-wiring-service">услуга проводки</span>
+                    <span class="span-lighting">светильники</span
+                    ><span class="span-tiles">плиты</span
+                    ><span class="span-repair">ремонт</span
+                    ><span class="span-wiring-service">услуга проводки</span>
                   </div>
                 </div>
                 <div class="frame-14">
-                  <a href="#" class="span-projects">Реализованные проекты</a>
+                  <a href="./detail-blog.html" class="span-projects"
+                    >Реализованные проекты</a
+                  >
                   <div class="group-15">
-                    <span class="span-offices">офисы</span>
-                    <span class="span-apartments">квартиры</span>
-                    <span class="span-malls">торговые центры</span>
-                    <span class="span-others">другие</span>
+                    <span class="span-offices">офисы</span
+                    ><span class="span-apartments">квартиры</span
+                    ><span class="span-malls">торговые центры</span
+                    ><span class="span-others">другие</span>
                   </div>
                 </div>
                 <div class="frame-16">
-                  <a href="{% url 'blog' %}" class="span-blog">Блог</a>
-                  <a href="{% url 'contact' %}" class="contacts-17">Контакты</a>
-                  <span class="privacy-policy">Политика<br />конфиденциальности</span>
-                  <span class="terms-of-service">Политика<br />соглашения</span>
+                  <a href="./blog.html" class="span-blog">Блог</a>
+                  <a href="./contacts.html" class="contacts-17">Контакты</a>
+                  <span class="privacy-policy"
+                    >Политика<br />конфиденциальности</span
+                  ><span class="terms-of-service"
+                    >Политика<br />соглашения</span
+                  >
                 </div>
               </div>
               <div class="cn">
@@ -116,9 +141,13 @@
               </div>
             </div>
           </div>
-          <div class="screenshot"></div>
+         <a href="https://www.google.kg/maps/place/%D0%A2%D0%B5%D1%85%D0%BD%D0%BE+%D0%9F%D0%B0%D1%80%D0%BA/@42.8568105,74.6321896,17z/data=!3m1!4b1!4m6!3m5!1s0x389eb6572914c7b7:0x669f8315bcc304af!8m2!3d42.8568066!4d74.6347645!16s%2Fg%2F11c535fswn?hl=ru&entry=ttu&g_ep=EgoyMDI1MDIxMC4wIKXMDSoASAFQAw%3D%3D">
+        <div class="screenshot"></div>
+
+        </a>
         </div>
       </div>
     </div>
+    <!-- Generated by Codia AI - https://codia.ai/ -->
   </body>
 </html>
